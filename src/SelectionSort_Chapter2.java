@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class SelectionSort {
+public class SelectionSort_Chapter2 {
     public static void main(String[] args) {
         int[] array = new int[512];
         for (int i = 0; i < array.length; i++) {
