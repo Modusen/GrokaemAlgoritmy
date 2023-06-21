@@ -1,4 +1,4 @@
-package QuickSortApp_Chapter4;
+package quickSortApp_Chapter4;
 
 import java.util.Arrays;
 import java.util.Random;
