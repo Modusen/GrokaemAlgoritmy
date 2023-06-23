@@ -4,11 +4,11 @@ public class Main {
     public static void main(String[] args) {
         Graph theGraph = new Graph();
         theGraph.addVertex('A');
-        theGraph.addVertex('S');
-        theGraph.addVertex('S');
-        theGraph.addVertex('H');
-        theGraph.addVertex('O');
-        theGraph.addVertex('L');
+        theGraph.addVertex('B');
+        theGraph.addVertex('C');
+        theGraph.addVertex('D');
+        theGraph.addVertex('E');
+        theGraph.addVertex('F');
 
         theGraph.addEdge(0, 1);
         theGraph.addEdge(1, 2);
@@ -18,6 +18,10 @@ public class Main {
 
         System.out.print("Visits: ");
         theGraph.deepFirstSearch();
+
+        System.out.println("");
+        System.out.print("Visits: ");
+        theGraph.breadthFirstSearch();
 
     }
 }

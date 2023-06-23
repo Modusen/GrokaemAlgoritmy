@@ -1,5 +1,7 @@
 package graphs;
 
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Stack;
 
 public class Graph {
@@ -8,6 +10,7 @@ public class Graph {
     private final int[][] adjustmentMatrix;
     private int nVerts;
     private final Stack<Integer> theStack = new Stack<>();
+    private final Queue<Integer> theQueue = new PriorityQueue<>();
 
     public Graph() {
         vertexList = new Vertex[MAX_VERTS];
@@ -56,6 +59,25 @@ public class Graph {
                 vertexList[v].setWasVisited(true);
                 displayVertex(v);
                 theStack.push(v);
+            }
+        }
+        for (int j = 0; j < nVerts; j++) {
+            vertexList[j].setWasVisited(false);
+        }
+    }
+
+    public void breadthFirstSearch() {
+        vertexList[0].setWasVisited(true);
+        displayVertex(0);
+        theQueue.add(0);
+        int v2;
+
+        while(!theQueue.isEmpty()) {
+            int v1 = theQueue.remove();
+            while((v2=getAdjUnvisitedVertex(v1))!= -1) {
+                vertexList[v2].setWasVisited(true);
+                displayVertex(v2);
+                theQueue.add(v2);
             }
         }
         for (int j = 0; j < nVerts; j++) {
