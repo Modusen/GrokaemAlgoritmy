@@ -1,8 +1,4 @@
-import quickSortApp_Chapter4.MyArray;
-
 import java.util.Arrays;
-
-import static java.lang.Integer.MAX_VALUE;
 
 public class Recursion_Chapters3And4 {
 
@@ -14,15 +10,15 @@ public class Recursion_Chapters3And4 {
 //        System.out.println(sum(myArray));
 //        System.out.println(getMaxValue(myArray));
         System.out.println(myArray.length + " " + Arrays.toString(myArray));
-        sort(myArray, 0, myArray.length - 1);
+        mergeSorting(myArray, 0, myArray.length - 1);
         System.out.println(Arrays.toString(myArray));
     }
 
-    public static void sort(int[] A, int p, int r) {
+    public static void mergeSorting(int[] A, int p, int r) {
         if (p < r) {
             int q = (p + r) / 2;
-            sort(A, p, q);
-            sort(A, q + 1, r);
+            mergeSorting(A, p, q);
+            mergeSorting(A, q + 1, r);
             merge(A, p, q, r);
         }
     }
